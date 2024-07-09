@@ -36,7 +36,7 @@ for i, d in enumerate(docs):
   )
 
 
-prompt = "Can you refer the Astro docs and give me the method of how to install astro using npm?"
+prompt = "How to install Astro?"
 
 # generate an embedding for the prompt and retrieve the most relevant doc
 response = ollama.embeddings(
@@ -50,5 +50,11 @@ results = collection.query(
 
 #print("similarity: ",compute_cosine_similarity(np.array(response["embedding"]), np.array(results["embeddings"][0][0])))
 
+context = str(results["documents"])
+# get the most relevant document and generate a response
+output = ollama.generate(
+  model="llama3-gradient",
+  prompt=f"Using this data: {context}. Respond to this prompt: {prompt}"
+)
 
-
+print(output['response'])
