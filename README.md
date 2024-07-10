@@ -18,13 +18,13 @@ To set up this project, ensure you have Python installed and then install the re
 pip install numpy ollama chromadb langchain_text_splitters langchain_community
 ```
 
-Place your collection of PDF documents in a directory named [`data`] for the document loader to process.
+Place your collection of PDF documents in a directory named `data` for the document loader to process.
 
 ## Usage
 
-1. **Document Processing**: Run the script to load PDF documents from the [`data`] directory, split them into chunks, and generate embeddings for each chunk.
+1. **Document Processing**: Run the script to load PDF documents from the `data` directory, split them into chunks, and generate embeddings for each chunk.
 2. **ChromaDB Collection**: The script automatically creates a `ChromaDB` collection and stores the document embeddings.
-3. **Query Processing**: Modify the [`prompt`] variable in the script to your specific query.
+3. **Query Processing**: Modify the `prompt` variable in the script to your specific query.
 4. **Response Generation**: The script generates a response based on the most relevant document content and prints it to the console.
 
 Example query modification:
